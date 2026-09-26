@@ -1,0 +1,4 @@
+# file: C:\Users\Monika Yadav\OneDrive\Desktop\Hyperion\VERITY\app\api\transactions.py
+# hypothesis_version: 6.168.1
+
+[444, '/api/transactions', '/{id}', '/{id}/analysis', '/{id}/explain', '/{id}/timeline', 'RC_UNKNOWN', 'Transactions', 'candidate_amount', 'committed_amount', 'naive_overestimation', 'observed_amount', 'rule_id']

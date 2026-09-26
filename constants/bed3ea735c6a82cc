@@ -1,0 +1,4 @@
+# file: C:\Users\Monika Yadav\OneDrive\Desktop\Hyperion\VERITY\app\simulation\simulation_engine.py
+# hypothesis_version: 6.168.1
+
+[500.0, 1000.0, 1500.0, 2000.0, 3000.0, 100, 2026, 'BANK_SUCCESS', 'CANONICAL_DEMO', 'COMPLETED', 'CONFIRMED', 'CONFLICTING_PROVIDER', 'DUPLICATE_WEBHOOK', 'GATEWAY_CONFIRMED', 'GATEWAY_FAILED', 'INITIATED', 'INR', 'NORMAL_SUCCESS', 'RUNNING', 'SUCCESS', 'TIMED_OUT', 'amount', 'bank_a', 'bank_b', 'candidate_amount', 'committed_amount', 'gateway_a', 'gateway_b', 'intent_id', 'intent_state', 'observed_amount', 'pending', 'resolution_state', 'status']

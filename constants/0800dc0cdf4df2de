@@ -1,0 +1,4 @@
+# file: C:\Users\Monika Yadav\OneDrive\Desktop\Hyperion\VERITY\app\services\ledger_service.py
+# hypothesis_version: 6.168.1
+
+[400, 409, 444, 500, 'BANK_SUCCESS', 'CONFIRMED', 'CONFLICTING_STATE', 'FinancialTransaction', 'GATEWAY_CONFIRMED', 'LEDGER_COMMIT_FAILED', 'MANUAL_REVIEW', 'POTENTIAL_DUPLICATE', 'PaymentIntent', 'SYSTEM', 'amount', 'attempt_id', 'currency', 'error', 'intent_id', 'value']

@@ -1,0 +1,4 @@
+# file: C:\Users\Monika Yadav\OneDrive\Desktop\Hyperion\VERITY\app\services\explanation_service.py
+# hypothesis_version: 6.168.1
+
+['UNKNOWN', 'Unknown Root Cause', 'candidate_amount', 'committed_amount', 'correlation_evidence', 'name', 'observed_amount', 'recommendation', 'resolution', 'resolution_state', 'root_cause_chain']

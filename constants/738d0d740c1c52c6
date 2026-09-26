@@ -1,0 +1,4 @@
+# file: C:\Users\Monika Yadav\OneDrive\Desktop\Hyperion\VERITY\app\services\ingestion_service.py
+# hypothesis_version: 6.168.1
+
+['AUTO_PROCESS', 'BANK_FAILED', 'BANK_SUCCESS', 'CONFIRMED', 'CUST-DEFAULT', 'FAILED', 'GATEWAY_CONFIRMED', 'GATEWAY_FAILED', 'IDEMPOTENT_NOOP', 'INGEST_EVENT', 'PROCESSED', 'PaymentEvent', 'TIMED_OUT', 'TIMEOUT_DETECTED', 'attempt_id', 'dedup_hash', 'event_type', 'intent_id', 'intent_state', 'json', 'links_count', 'provider_ref', 'relations', 'resolution_state', 'type', 'utf-8']

@@ -1,0 +1,4 @@
+# file: C:\Users\Monika Yadav\OneDrive\Desktop\Hyperion\VERITY\app\api\incidents.py
+# hypothesis_version: 6.168.1
+
+[444, '/api/incidents', '/{id}', '/{id}/review', 'Incidents', 'RC_UNKNOWN', 'candidate_amount', 'committed_amount', 'naive_overestimation', 'observed_amount', 'rule_id']

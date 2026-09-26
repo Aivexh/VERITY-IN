@@ -1,0 +1,4 @@
+# file: C:\Users\Monika Yadav\OneDrive\Desktop\Hyperion\VERITY\app\models\models.py
+# hypothesis_version: 6.168.1
+
+[100, 255, '1.0.0', 'FinancialResolution', 'FinancialTransaction', 'INR', 'IncidentAnalysis', 'PENDING', 'PaymentAttempt', 'PaymentEvent', 'PaymentIntent', 'SYSTEM', 'all, delete-orphan', 'attempt', 'attempts', 'audit_logs', 'dedup_hash', 'events', 'incident_analyses', 'intent', 'intent_id', 'payment_attempts', 'payment_attempts.id', 'payment_events', 'payment_intents', 'payment_intents.id', 'provider', 'provider_reference', 'resolutions', 'simulation_runs', 'transaction_links', 'uq_event_dedup_hash']

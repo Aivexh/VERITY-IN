@@ -1,0 +1,4 @@
+# file: C:\Users\Monika Yadav\OneDrive\Desktop\Hyperion\VERITY\app\truth_engine\truth_engine.py
+# hypothesis_version: 6.168.1
+
+['0.00', '0.4000', '0.5000', '0.9500', '0.9900', '1.0000', 'attempts_count', 'candidate_amount', 'cause', 'committed_tx_id', 'failed_count', 'observed_exposure', 'primary_root_cause', 'provider_ref', 'selected_attempt_id']

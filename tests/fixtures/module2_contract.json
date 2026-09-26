@@ -1,0 +1,198 @@
+{
+  "IncidentAnalysis": {
+    "id": "a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a11",
+    "intent_id": "b1eebc99-9c0b-4ef8-bb6d-6bb9bd380a22",
+    "primary_root_cause": "RC_NETWORK_TIMEOUT",
+    "root_cause_chain": [
+      {
+        "rule_id": "RC_NETWORK_TIMEOUT",
+        "name": "Network Timeout during Confirmation",
+        "description": "Gateway confirmation was lost following Bank success, triggering a customer retry.",
+        "severity": "HIGH",
+        "confidence_impact": 0.95,
+        "recommended_action": "MANUAL_REVIEW"
+      },
+      {
+        "rule_id": "RC_CUSTOMER_RETRY",
+        "name": "Customer Payment Retry",
+        "description": "Customer initiated a secondary payment attempt following a timeout.",
+        "severity": "MEDIUM",
+        "confidence_impact": 0.90,
+        "recommended_action": "CORRELATE_ATTEMPTS"
+      }
+    ],
+    "correlation_evidence": {
+      "relation": "RELATED",
+      "correlation_score": 90,
+      "signals": [
+        {"signal": "same_order_id", "matched": true, "weight": 40},
+        {"signal": "same_customer_id", "matched": true, "weight": 15},
+        {"signal": "exact_amount", "matched": true, "weight": 20},
+        {"signal": "time_under_60s", "matched": true, "weight": 15}
+      ],
+      "hard_blockers": [],
+      "independent_signal_count": 4
+    },
+    "resolution": {
+      "observed_amount": "4000.00",
+      "candidate_amount": "2000.00",
+      "committed_amount": "0.00",
+      "resolution_state": "HELD_FOR_REVIEW",
+      "candidate_attempt_ids": [
+        "c2eebc99-9c0b-4ef8-bb6d-6bb9bd380a33",
+        "d3eebc99-9c0b-4ef8-bb6d-6bb9bd380a44"
+      ],
+      "resolution_confidence": "0.9500",
+      "reason": "Multiple confirmed payment attempts detected for single intent under network timeout retry causal chain."
+    },
+    "naive_exposure": {
+      "naive_observed_amount": "4000.00",
+      "verity_candidate_amount": "2000.00",
+      "verity_committed_amount": "0.00",
+      "naive_overestimation": "2000.00"
+    },
+    "recommendation": "Reviewer should confirm Gateway B attempt and mark Gateway A attempt as duplicate.",
+    "created_at": "2026-09-26T10:32:45Z"
+  },
+  "FinancialResolution": {
+    "id": "e4eebc99-9c0b-4ef8-bb6d-6bb9bd380a55",
+    "intent_id": "b1eebc99-9c0b-4ef8-bb6d-6bb9bd380a22",
+    "observed_amount": "4000.00",
+    "candidate_amount": "2000.00",
+    "committed_amount": "0.00",
+    "resolution_state": "HELD_FOR_REVIEW",
+    "selected_attempt_id": null,
+    "candidate_attempt_ids": [
+      "c2eebc99-9c0b-4ef8-bb6d-6bb9bd380a33",
+      "d3eebc99-9c0b-4ef8-bb6d-6bb9bd380a44"
+    ],
+    "resolution_confidence": "0.9500",
+    "reason": "Multiple related attempts confirmed. Held for review.",
+    "evidence": {
+      "attempt_count": 2,
+      "confirmed_attempts": 2
+    },
+    "created_at": "2026-09-26T10:32:45Z"
+  },
+  "CorrelationEvidence": {
+    "relation": "RELATED",
+    "correlation_score": 90,
+    "signals": [
+      {"signal": "same_order_id", "matched": true, "weight": 40},
+      {"signal": "same_customer_id", "matched": true, "weight": 15},
+      {"signal": "exact_amount", "matched": true, "weight": 20},
+      {"signal": "time_under_60s", "matched": true, "weight": 15}
+    ],
+    "hard_blockers": [],
+    "independent_signal_count": 4
+  },
+  "Timeline": {
+    "intent_id": "b1eebc99-9c0b-4ef8-bb6d-6bb9bd380a22",
+    "total_events": 4,
+    "events": [
+      {
+        "event_id": "f5eebc99-9c0b-4ef8-bb6d-6bb9bd380a66",
+        "attempt_id": "c2eebc99-9c0b-4ef8-bb6d-6bb9bd380a33",
+        "provider": "gateway_a",
+        "event_type": "INITIATED",
+        "event_created_at": "2026-09-26T10:31:05Z",
+        "event_received_at": "2026-09-26T10:31:06Z",
+        "arrival_lag_seconds": 1.0,
+        "is_out_of_order": false,
+        "payload_summary": {"amount": 2000.0, "status": "INITIATED"}
+      },
+      {
+        "event_id": "06eebc99-9c0b-4ef8-bb6d-6bb9bd380a77",
+        "attempt_id": "c2eebc99-9c0b-4ef8-bb6d-6bb9bd380a33",
+        "provider": "bank_a",
+        "event_type": "BANK_SUCCESS",
+        "event_created_at": "2026-09-26T10:31:20Z",
+        "event_received_at": "2026-09-26T10:31:21Z",
+        "arrival_lag_seconds": 1.0,
+        "is_out_of_order": false,
+        "payload_summary": {"amount": 2000.0, "status": "SUCCESS"}
+      },
+      {
+        "event_id": "17eebc99-9c0b-4ef8-bb6d-6bb9bd380a88",
+        "attempt_id": "d3eebc99-9c0b-4ef8-bb6d-6bb9bd380a44",
+        "provider": "gateway_b",
+        "event_type": "GATEWAY_CONFIRMED",
+        "event_created_at": "2026-09-26T10:32:10Z",
+        "event_received_at": "2026-09-26T10:32:11Z",
+        "arrival_lag_seconds": 1.0,
+        "is_out_of_order": false,
+        "payload_summary": {"amount": 2000.0, "status": "CONFIRMED"}
+      },
+      {
+        "event_id": "28eebc99-9c0b-4ef8-bb6d-6bb9bd380a99",
+        "attempt_id": "c2eebc99-9c0b-4ef8-bb6d-6bb9bd380a33",
+        "provider": "gateway_a",
+        "event_type": "GATEWAY_CONFIRMED",
+        "event_created_at": "2026-09-26T10:31:30Z",
+        "event_received_at": "2026-09-26T10:32:40Z",
+        "arrival_lag_seconds": 70.0,
+        "is_out_of_order": true,
+        "payload_summary": {"amount": 2000.0, "status": "CONFIRMED"}
+      }
+    ]
+  },
+  "Dashboard": {
+    "total_intents": 1,
+    "total_attempts": 2,
+    "total_events": 4,
+    "total_incidents": 1,
+    "incidents_by_state": {
+      "POTENTIAL_DUPLICATE": 1
+    },
+    "incidents_by_root_cause": {
+      "RC_NETWORK_TIMEOUT": 1
+    },
+    "exposure_metrics": {
+      "total_observed_exposure": "4000.00",
+      "total_candidate_legitimate": "2000.00",
+      "total_committed_ledger": "0.00",
+      "uncommitted_exposure_gap": "4000.00",
+      "naive_committable_exposure": "4000.00"
+    },
+    "latest_incidents": [
+      {
+        "id": "a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a11",
+        "intent_id": "b1eebc99-9c0b-4ef8-bb6d-6bb9bd380a22",
+        "order_id": "ORD-CANONICAL-001",
+        "customer_id": "CUST-99",
+        "declared_amount": "2000.00",
+        "currency": "INR",
+        "aggregate_state": "POTENTIAL_DUPLICATE",
+        "primary_root_cause": "RC_NETWORK_TIMEOUT",
+        "observed_amount": "4000.00",
+        "candidate_amount": "2000.00",
+        "committed_amount": "0.00",
+        "created_at": "2026-09-26T10:32:45Z"
+      }
+    ]
+  },
+  "Transaction": {
+    "id": "39eebc99-9c0b-4ef8-bb6d-6bb9bd380b00",
+    "intent_id": "b1eebc99-9c0b-4ef8-bb6d-6bb9bd380a22",
+    "attempt_id": "d3eebc99-9c0b-4ef8-bb6d-6bb9bd380a44",
+    "amount": "2000.00",
+    "currency": "INR",
+    "created_at": "2026-09-26T10:33:00Z"
+  },
+  "Incident": {
+    "summary": {
+      "id": "a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a11",
+      "intent_id": "b1eebc99-9c0b-4ef8-bb6d-6bb9bd380a22",
+      "order_id": "ORD-CANONICAL-001",
+      "customer_id": "CUST-99",
+      "declared_amount": "2000.00",
+      "currency": "INR",
+      "aggregate_state": "POTENTIAL_DUPLICATE",
+      "primary_root_cause": "RC_NETWORK_TIMEOUT",
+      "observed_amount": "4000.00",
+      "candidate_amount": "2000.00",
+      "committed_amount": "0.00",
+      "created_at": "2026-09-26T10:32:45Z"
+    }
+  }
+}

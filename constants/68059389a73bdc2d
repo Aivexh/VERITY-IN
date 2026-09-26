@@ -1,0 +1,4 @@
+# file: C:\Users\Monika Yadav\OneDrive\Desktop\Hyperion\VERITY\app\schemas\schemas.py
+# hypothesis_version: 6.168.1
+
+['Currency code', 'INR', 'Payment method used', 'Raw event payload', 'Transaction amount']
